@@ -76,7 +76,8 @@ def report(update, context):
     update.message.reply_text(text)
 
 def main():
-    TOKEN = "YOUR_BOT_TOKEN_HERE"
+    import os
+    TOKEN = os.getenv("BOT_TOKEN")
 
     updater = Updater(TOKEN, use_context=True)
     dp = updater.dispatcher
